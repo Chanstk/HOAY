@@ -1,5 +1,6 @@
 package com.example.chanst.hoay;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +15,15 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -39,10 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BaiduMap mBaiduMap;
     private LocationClient mLocationClient;
     private MyLocationListener mLocationListener;
-    private ImageButton toMyLoc;
+    private ImageButton toMyLoc, smallLetter;
     private boolean isFirstIn = true;
     private MyLocationConfiguration.LocationMode mCurrentMode;
     BitmapDescriptor mCurrentMarker = null;
+    private ImageButton chat, gallery, map, loveness, my;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +83,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBaiduMap.setMapStatus(msu);
         toMyLoc = (ImageButton) findViewById(R.id.toMyLoc);
         toMyLoc.setOnClickListener(this);
+        chat = (ImageButton) findViewById(R.id.chat);
+        chat.setOnClickListener(this);
+        gallery = (ImageButton) findViewById(R.id.gallery);
+        gallery.setOnClickListener(this);
+        map = (ImageButton) findViewById(R.id.map);
+        map.setOnClickListener(this);
+        loveness = (ImageButton) findViewById(R.id.loveness);
+        loveness.setOnClickListener(this);
+        my = (ImageButton) findViewById(R.id.my);
+        my.setOnClickListener(this);
+        smallLetter = (ImageButton) findViewById(R.id.smallLetter);
+        smallLetter.setOnClickListener(this);
     }
 
     @Override
@@ -120,6 +137,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setMyLocationConfigeration(new MyLocationConfiguration(
                                 mCurrentMode, true, mCurrentMarker));
                 centerToMyLocation();
+                break;
+            case R.id.gallery:
+                Intent intent = new Intent();
+                intent.setClass(this, gallery.class);
+                startActivity(intent);
+                break;
+            case R.id.smallLetter:
+                LatLng point = new LatLng(mLatitude - 0.005,
+                mLongtitude - 0.005);
+                //构建Marker图标
+                BitmapDescriptor bitmap = BitmapDescriptorFactory
+                        .fromResource(R.drawable.map_env);
+                //构建MarkerOption，用于在地图上添加Marker
+                OverlayOptions option = new MarkerOptions()
+                        .position(point)
+                        .icon(bitmap);
+                //在地图上添加Marker，并显示
+                mBaiduMap.addOverlay(option);
         }
     }
 

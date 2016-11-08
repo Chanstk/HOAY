@@ -11,12 +11,29 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:clickable="true" />
-    <ImageButton
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/toMyLoc"
-        android:background="@drawable/arrow"
-        android:layout_gravity="bottom|right"
+    <LinearLayout
+        android:layout_gravity="top|right"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/smallLetter"
+            android:background="@drawable/env"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:layout_marginRight="10dp"
+            android:id="@+id/toMyLoc"
+            android:background="@drawable/arrow"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <include
+        layout="@layout/navibar"></include>
 </FrameLayout>
