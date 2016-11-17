@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MyLocationConfiguration.LocationMode mCurrentMode;
     BitmapDescriptor mCurrentMarker = null;
     private ImageButton chat, gallery, map, loveness, my;
+    private static final int  SMALLLETTER = 173;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,17 +145,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.smallLetter:
-                LatLng point = new LatLng(mLatitude - 0.005,
-                mLongtitude - 0.005);
-                //构建Marker图标
-                BitmapDescriptor bitmap = BitmapDescriptorFactory
-                        .fromResource(R.drawable.map_env);
-                //构建MarkerOption，用于在地图上添加Marker
-                OverlayOptions option = new MarkerOptions()
-                        .position(point)
-                        .icon(bitmap);
-                //在地图上添加Marker，并显示
-                mBaiduMap.addOverlay(option);
+                Intent intentToSmallLetter = new Intent();
+                intentToSmallLetter.setClass(this, smallLetter.class);
+                startActivityForResult(intentToSmallLetter,SMALLLETTER);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case SMALLLETTER:
+                if(resultCode == RESULT_OK){
+                    LatLng point = new LatLng(mLatitude - 0.005,
+                            mLongtitude - 0.005);
+                    //构建Marker图标
+                    BitmapDescriptor bitmap = BitmapDescriptorFactory
+                            .fromResource(R.drawable.map_env);
+                    //构建MarkerOption，用于在地图上添加Marker
+                    OverlayOptions option = new MarkerOptions()
+                            .position(point)
+                            .icon(bitmap);
+                    //在地图上添加Marker，并显示
+                    mBaiduMap.addOverlay(option);
+                }else{
+                    Log.i("mainactivity", "hello");
+                }
         }
     }
 

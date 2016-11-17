@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_small_letter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chanst.hoay.smallLetter">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:hint="Please text the content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/confirm"
+                android:text="confirm"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+            <Button
+                android:id="@+id/cancel"
+                android:text="back"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
