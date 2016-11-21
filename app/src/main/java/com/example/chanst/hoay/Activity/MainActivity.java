@@ -1,4 +1,4 @@
-package com.example.chanst.hoay;
+package com.example.chanst.hoay.Activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -25,6 +25,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
+import com.example.chanst.hoay.R;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     BitmapDescriptor mCurrentMarker = null;
     private ImageButton chat, gallery, map, loveness, my;
     private static final int  SMALLLETTER = 173;
+    private static final int  MY = 171;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,13 +143,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.gallery:
                 Intent intent = new Intent();
-                intent.setClass(this, gallery.class);
+                intent.setClass(this, GalleryAcivity.class);
                 startActivity(intent);
                 break;
             case R.id.smallLetter:
                 Intent intentToSmallLetter = new Intent();
-                intentToSmallLetter.setClass(this, smallLetter.class);
+                intentToSmallLetter.setClass(this, SmallLetterActivity.class);
                 startActivityForResult(intentToSmallLetter,SMALLLETTER);
+                break;
+            case R.id.my:
+                Intent intentToMy = new Intent();
+                intentToMy.setClass(this, LoginActivity.class);
+                startActivityForResult(intentToMy,MY);
+                break;
         }
     }
 
@@ -171,6 +179,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }else{
                     Log.i("mainactivity", "hello");
                 }
+                break;
+            case MY:
+                if(resultCode == RESULT_OK){
+                    //注册成功
+                }
+                break;
+
         }
     }
 

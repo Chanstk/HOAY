@@ -1,4 +1,4 @@
-package com.example.chanst.hoay;
+package com.example.chanst.hoay.Activity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -10,11 +10,12 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.example.chanst.hoay.Bean.galleryBean;
+import com.example.chanst.hoay.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class gallery extends AppCompatActivity {
+public class GalleryAcivity extends AppCompatActivity {
     private GridView gridView;
     private Drawable p1, p2, p3;
     private listAdapter adapter;

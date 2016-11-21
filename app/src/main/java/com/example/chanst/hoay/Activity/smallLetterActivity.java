@@ -1,4 +1,4 @@
-package com.example.chanst.hoay;
+package com.example.chanst.hoay.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class smallLetter extends AppCompatActivity implements View.OnClickListener {
+import com.example.chanst.hoay.R;
+
+public class SmallLetterActivity extends AppCompatActivity implements View.OnClickListener {
     private Button confirm;
     private Button cancel;
     @Override
