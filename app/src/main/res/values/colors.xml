@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="naviBarBackground">#e1e1e1</color>
+    <color name="colorFontBlack">#353333</color>
 </resources>

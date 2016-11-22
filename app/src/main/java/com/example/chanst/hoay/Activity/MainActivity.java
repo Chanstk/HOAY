@@ -3,10 +3,17 @@ package com.example.chanst.hoay.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.ImageButton;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -16,10 +23,12 @@ import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapPoi;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
@@ -30,6 +39,11 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.io.File;
+import java.io.InputStream;
+
+import static javax.xml.transform.OutputKeys.ENCODING;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -78,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+//        String FL_NAME = "custom_config_0323.txt";
+//        String PACKAGE_NAME = "com.example.chanst.hoay";
+//        String FL_PATH = "/data" + Environment.getDataDirectory().getAbsolutePath() +"/" + PACKAGE_NAME;
+//        String FL = FL_PATH + "/" + FL_NAME;
+//        mMapView.setCustomMapStylePath(FL);
         mMapView = (MapView) findViewById(R.id.bmapView);
         mMapView.showZoomControls(false);
         mBaiduMap = mMapView.getMap();
@@ -162,26 +181,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
+        switch (requestCode) {
             case SMALLLETTER:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     LatLng point = new LatLng(mLatitude - 0.005,
                             mLongtitude - 0.005);
                     //构建Marker图标
                     BitmapDescriptor bitmap = BitmapDescriptorFactory
                             .fromResource(R.drawable.map_env);
+                    //Marker 信息
+                    Bundle bundle = data.getBundleExtra("info");
+
                     //构建MarkerOption，用于在地图上添加Marker
                     OverlayOptions option = new MarkerOptions()
                             .position(point)
-                            .icon(bitmap);
+                            .icon(bitmap).extraInfo(bundle);
+                    mBaiduMap.setOnMarkerClickListener(new BaiduMap.OnMarkerClickListener() {
+                        @Override
+                        public boolean onMarkerClick(Marker marker) {
+                            showPopUpView(marker.getExtraInfo());
+                            return false;
+                        }
+                    });
                     //在地图上添加Marker，并显示
                     mBaiduMap.addOverlay(option);
-                }else{
+                } else {
                     Log.i("mainactivity", "hello");
                 }
                 break;
             case MY:
-                if(resultCode == RESULT_OK){
+                if (resultCode == RESULT_OK) {
                     //注册成功
                 }
                 break;
@@ -189,6 +218,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private void showPopUpView(Bundle bundle) {
+        // 一个自定义的布局，作为显示的内容
+        View contentView = LayoutInflater.from(getApplicationContext()).inflate(
+                R.layout.popwindow_mainactivity, null);
+//        final PopupWindow popupWindow = new PopupWindow(contentView,
+//                AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.MATCH_PARENT, true);
+        final PopupWindow popupWindow = new PopupWindow(contentView,
+                800, 850, true);
+
+        popupWindow.setTouchable(true);
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setTouchInterceptor(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                Log.i("mengdd", "onTouch : ");
+
+                return false;
+                // 这里如果返回true的话，touch事件将被拦截
+                // 拦截后 PopupWindow的onTouchEvent不被调用，这样点击外部区域无法dismiss
+            }
+        });
+        //popWindow内容显示
+        TextView content = (TextView) contentView.findViewById(R.id.content_popView);
+        content.setText((CharSequence) bundle.get("content"));
+        //popwindow 回复
+        TextView tv = (TextView) contentView.findViewById(R.id.pop_reply);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+        //popwindow取消
+        TextView cancel = (TextView) contentView.findViewById(R.id.pop_cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+        popupWindow.showAtLocation(mMapView, Gravity.CENTER, 0, 0);
+    }
     private class MyLocationListener implements BDLocationListener {
 
         @Override
