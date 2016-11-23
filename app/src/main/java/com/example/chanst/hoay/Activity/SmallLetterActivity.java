@@ -32,6 +32,7 @@ public class SmallLetterActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //确认发布小纸条
             case R.id.confirm:
                 String content_str = content.getText().toString();
                 if (content_str.equals("")){

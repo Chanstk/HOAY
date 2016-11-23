@@ -14,7 +14,9 @@ import com.example.chanst.hoay.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+图鉴activity
+ */
 public class GalleryAcivity extends AppCompatActivity {
     private GridView gridView;
     private Drawable p1, p2, p3;
@@ -26,14 +28,14 @@ public class GalleryAcivity extends AppCompatActivity {
         setContentView(R.layout.activity_gallery);
         initView();
     }
-
+    //初始化界面
     public void initView(){
         gridView = (GridView) findViewById(R.id.gridview);
         initData();
         adapter = new listAdapter(data);
         gridView.setAdapter(adapter);
     }
-
+    //数据初始化
     public void initData(){
         p1 = getResources().getDrawable(R.drawable.p1);
         p2 = getResources().getDrawable(R.drawable.p2);

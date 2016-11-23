@@ -13,9 +13,10 @@ import com.example.chanst.hoay.Tools.*;
 import com.example.chanst.hoay.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final int  SIGN_UP = 111;
     private EditText userName, passWord;
     private TextView login, signUp;
-    private static final int  SIGN_UP = 111;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         getIntent();
         initView();
     }
-
+    /*
+    界面初始化
+     */
     private void initView() {
         userName = (EditText) findViewById(R.id.userName_login_activity);
         passWord = (EditText) findViewById(R.id.passWord_login_activity);
@@ -48,6 +51,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
+    /*
+    登陆
+     */
     private void Login(String userName_str, String userPassWord_str){
         //检查用户名密码是否有效
         if (tools.CheckUserNamePassword(userName_str, userPassWord_str) != true){
@@ -64,8 +70,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             this.finish();
         }
     }
-
-
+    /*
+    注册界面返回至此
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

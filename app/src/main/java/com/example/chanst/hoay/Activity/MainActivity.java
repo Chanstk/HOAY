@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-
+    /*
+    百度地图，初始化位置
+     */
 
     private void initLocation() {
         mLocationListener = new MyLocationListener();
@@ -90,7 +92,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mLocationClient.setLocOption(option);
         mLocationClient.start();
     }
-
+    /*
+    初始化界面
+     */
     private void initView() {
 //        String FL_NAME = "custom_config_0323.txt";
 //        String PACKAGE_NAME = "com.example.chanst.hoay";
@@ -141,8 +145,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理
         mMapView.onPause();
     }
-
+    /*
+    将地图聚焦到用户位置
+     */
     private void centerToMyLocation() {
+        mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
+        mBaiduMap.setMyLocationConfigeration(new MyLocationConfiguration(
+                        mCurrentMode, true, mCurrentMarker));
         LatLng latLng = new LatLng(mLatitude, mLongtitude);
         MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(latLng);
         MapStatusUpdate msun = MapStatusUpdateFactory.zoomTo(15.0f);
@@ -153,23 +162,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //转到个人位置
             case R.id.toMyLoc:
-                mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-                mBaiduMap
-                        .setMyLocationConfigeration(new MyLocationConfiguration(
-                                mCurrentMode, true, mCurrentMarker));
                 centerToMyLocation();
                 break;
+            //跳到图鉴activity
             case R.id.gallery:
                 Intent intent = new Intent();
                 intent.setClass(this, GalleryAcivity.class);
                 startActivity(intent);
                 break;
+            //跳到小纸条activity
             case R.id.smallLetter:
                 Intent intentToSmallLetter = new Intent();
                 intentToSmallLetter.setClass(this, SmallLetterActivity.class);
                 startActivityForResult(intentToSmallLetter,SMALLLETTER);
                 break;
+            //跳到我的信息activity
             case R.id.my:
                 Intent intentToMy = new Intent();
                 intentToMy.setClass(this, LoginActivity.class);
@@ -177,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
+    //子activity返回至此
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -217,7 +226,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
-
+    /*
+    点击地图小纸条，弹出popupviwe
+     */
     private void showPopUpView(Bundle bundle) {
         // 一个自定义的布局，作为显示的内容
         View contentView = LayoutInflater.from(getApplicationContext()).inflate(
@@ -262,6 +273,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         popupWindow.showAtLocation(mMapView, Gravity.CENTER, 0, 0);
     }
+    /*
+    个人位置监听接口
+     */
     private class MyLocationListener implements BDLocationListener {
 
         @Override

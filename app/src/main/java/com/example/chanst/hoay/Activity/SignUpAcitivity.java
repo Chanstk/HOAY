@@ -22,7 +22,9 @@ public class SignUpAcitivity extends AppCompatActivity {
         getIntent();
         InitView();
     }
-
+    /*
+    初始化界面
+     */
     private void InitView() {
         userName = (EditText) findViewById(R.id.userName_signUp_activity);
         passWord = (EditText) findViewById(R.id.passWord_signUp_activity);
@@ -36,6 +38,9 @@ public class SignUpAcitivity extends AppCompatActivity {
             }
         });
     }
+    /*
+    注册
+     */
     private void SignUp(String userName, String userPassWord){
         //检查用户名密码是否有效
         if (tools.CheckUserNamePassword(userName, userPassWord) != true){
