@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="@color/naviBarBackground"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/naviBarBackground"
+        >
+        <ImageButton
+            android:layout_gravity="center"
+            android:background="@color/naviBarBackground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/nana"
+            android:id="@+id/tou"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/naviBarBackground"
+        >
+        <LinearLayout
+            android:layout_gravity="top|left"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/naviBarBackground"
+            >
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv1"
+                android:layout_gravity="top|left"
+                android:text="娜娜"
+                android:textSize="20dp"
+                android:textColor="#000000" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/time"
+                android:layout_gravity="top|right"
+                android:text="11:25"
+                android:textSize="20dp"
+                android:textColor="@color/navy" />
+        </LinearLayout>
+        <TextView
+
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content1"
+            android:gravity="left"
+            android:text="你好啊"
+            android:textSize="20dp"
+            android:textColor="@color/navy"  />
+    </LinearLayout>
+</LinearLayout>

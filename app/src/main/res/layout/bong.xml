@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <FrameLayout
+        android:background="#30eeeeee"
+        android:layout_width="match_parent"
+        android:layout_height="560dp">
+
+        <FrameLayout
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="120dp"
+            android:layout_width="264dp"
+            android:layout_height="224dp"
+            android:background="#90a4a2a2"
+            android:layout_weight="0.64">
+
+            <FrameLayout
+
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:scrollbarStyle="insideInset"
+                    android:width="3dp"
+                    android:color="#000"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="138dp">
+
+
+
+
+                <TextView
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:text="你踩到娜娜放置的地雷啦！
+                    BOOM!
+  你的头像会暂时变成如花，直到成功追击娜娜，或者放置地雷炸到其他小伙伴。
+  PS：头像每天凌晨每天恢复"
+                    android:textColor="#fff"
+                    android:textSize="12dp"
+                    android:layout_width="205dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3" />
+
+            </FrameLayout><![CDATA[
+
+
+
+
+
+                android:layout_width="wrap_content"
+                    android:layout_height="36dp">
+
+
+            ]]>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="210dp">
+
+                <Button
+                        android:gravity="center"
+                        android:text="放置地雷"
+                        android:textColor="#fff"
+
+                        android:layout_width="70dp"
+                        android:background="@drawable/ybotton"
+                        android:layout_height="35dp"
+                        android:layout_gravity="bottom"
+                        android:id="@+id/fangzhi" />
+
+                <Button
+                        android:gravity="center"
+                        android:text="复仇追击"
+                        android:textColor="#fff"
+    android:layout_marginLeft="20dp"
+                        android:layout_width="70dp"
+                        android:background="@drawable/ybotton"
+                    android:layout_height="35dp"
+                        android:layout_gravity="bottom"
+                        android:id="@+id/zhuiji" />
+            </LinearLayout>
+
+
+        </FrameLayout>
+        <ImageView
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+
+            android:scaleType="fitXY"
+            android:layout_width="340dp"
+            android:layout_height="83dp"
+            app:srcCompat="@drawable/yribbon"
+            android:id="@+id/imageView5" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="70dp"
+            android:layout_height="95dp"
+            android:inputType="textPersonName"
+            android:text="踩到地雷啦"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:ems="10"
+            android:id="@+id/editText3" />
+
+        <ImageView
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="80dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/landmine1"
+            android:id="@+id/imageView3" />
+
+        <ImageView
+           android:layout_marginLeft="290dp"
+            android:layout_marginTop="90dp"
+            android:layout_width="24dp"
+            android:layout_height="27dp"
+            app:srcCompat="@drawable/close"
+            android:id="@+id/chacha" />
+    </FrameLayout>
+</LinearLayout>

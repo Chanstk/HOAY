@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/liaotian2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.lenovo.hoay.liaotianActivity1">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_below="@+id/聊天标题"
+        android:background="#B0B7B8"
+        android:layout_marginTop="0dp"
+        android:id="@+id/标题阴影"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_below="@+id/聊天区"
+        android:background="#B0B7B8"
+        android:layout_marginTop="0dp"
+        android:id="@+id/工作阴影"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#e5e5e5"
+        android:id="@+id/聊天标题"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:srcCompat="@drawable/yonghuicon"
+            android:id="@+id/对象信息"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="娜娜"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="#3890e2"
+            android:background="#E5E5E5"
+            android:id="@+id/talker"
+            android:layout_marginTop="6dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="手机在线-4G"
+            android:textColor="#3890e2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/way"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dp" />
+
+        <Button
+            android:text="返回"
+            android:textSize="25dp"
+            android:textColor="#3890e2"
+            android:background="#E5E5E5"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/返回"
+            android:layout_alignBottom="@+id/way"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="#e5e5e5"
+        android:id="@+id/聊天区"
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:text="16:30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/聊天时间" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/nanaicon"
+            android:id="@+id/对方头像2"
+            android:layout_below="@+id/我头像1"
+            android:layout_alignLeft="@+id/d对方头像1"
+            android:layout_alignStart="@+id/d对方头像1" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/myphoto"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/我头像1"
+            android:layout_below="@+id/d对方头像1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/myphoto"
+            android:id="@+id/我头像2"
+            android:layout_marginTop="22dp"
+            android:layout_below="@+id/对话3"
+            android:layout_alignLeft="@+id/我头像1"
+            android:layout_alignStart="@+id/我头像1" />
+
+        <TextView
+            android:text="哈哈，我每周日都会去里面的咖啡吧"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:background="#cecece"
+            android:layout_width="190dp"
+            android:layout_height="60dp"
+            android:id="@+id/对话4"
+            android:layout_marginTop="6dp"
+            android:layout_alignTop="@+id/我头像2"
+            android:layout_alignRight="@+id/对话2"
+            android:layout_alignEnd="@+id/对话2" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/nanaicon"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
+            android:id="@+id/d对方头像1"
+            android:layout_below="@+id/聊天时间"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:text="你好啊~~"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:background="#cecece"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textSize="20dp"
+            android:id="@+id/对话1"
+            android:layout_marginBottom="9dp"
+            android:layout_alignBottom="@+id/d对方头像1"
+            android:layout_toRightOf="@+id/d对方头像1"
+            android:layout_marginRight="188dp"
+            />
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/yinying"
+            android:id="@+id/黑块2"
+            android:layout_marginTop="12dp"
+            android:layout_alignTop="@+id/对话3"
+            android:layout_alignLeft="@+id/黑块1"
+            android:layout_alignStart="@+id/黑块1" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/yinying"
+            android:id="@+id/黑块1"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_alignBottom="@+id/对话1"
+            android:layout_alignRight="@+id/d对方头像1"
+            android:layout_alignEnd="@+id/d对方头像1"
+            android:layout_marginBottom="9dp" />
+
+        <TextView
+            android:text="发现我们有在图书馆擦肩而过3次哎"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:background="#cecece"
+            android:layout_width="190dp"
+            android:layout_height="60dp"
+            android:id="@+id/对话3"
+            android:layout_below="@+id/对话2"
+            android:layout_alignLeft="@+id/对话1"
+            android:layout_alignStart="@+id/对话1"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:text="hello"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:background="#cecece"
+            android:layout_width="60dp"
+            android:layout_height="38dp"
+            android:textSize="20dp"
+            android:id="@+id/对话2"
+            android:layout_marginBottom="9dp"
+            android:layout_alignBottom="@+id/我头像1"
+            android:layout_toLeftOf="@+id/我头像1"
+            android:layout_toStartOf="@+id/我头像1" />
+
+        <TextView
+            android:text="我很喜欢那里的咖啡"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:background="#cecece"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/对话5"
+            android:layout_toLeftOf="@+id/我头像3"
+            android:layout_toStartOf="@+id/我头像3" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="#e5e5e5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/聊天区"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/yuying"
+            android:id="@+id/yuying"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignTop="@+id/输入栏"
+            android:layout_toLeftOf="@+id/输入栏"
+            android:layout_toStartOf="@+id/输入栏"
+            android:layout_above="@+id/shoucang" />
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:id="@+id/输入栏"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/zhaopian"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/shoucang"
+            android:id="@+id/shoucang"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/yuying"
+            android:layout_alignEnd="@+id/yuying" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/zhaopian"
+            android:layout_marginLeft="36dp"
+            android:layout_marginStart="36dp"
+            android:id="@+id/zhaopian"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/yuying"
+            android:layout_toEndOf="@+id/yuying" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/dingwei"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/dingwei" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/gengduo"
+            android:id="@+id/imageView7"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/fasong"
+            android:layout_alignStart="@+id/fasong" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/shezhi"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
+            android:id="@+id/shezhi"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/fasong"
+            android:layout_toStartOf="@+id/fasong" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/fasong"
+            android:id="@+id/fasong"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/imageView7" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

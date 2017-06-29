@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <FrameLayout
+        android:background="#30eeeeee"
+        android:layout_width="match_parent"
+        android:layout_height="560dp">
+
+        <FrameLayout
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="120dp"
+            android:layout_width="264dp"
+            android:layout_height="224dp"
+            android:background="#90a4a2a2"
+            android:layout_weight="0.64">
+
+            <FrameLayout
+
+                    android:layout_marginTop="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:scrollbarStyle="insideInset"
+                    android:width="3dp"
+                    android:color="#000"
+                    android:layout_marginRight="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="106dp">
+
+
+                    <TextView
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:text="地雷在多久后开始生效呢"
+                        android:textColor="#fff"
+                        android:textSize="20dp"
+                        android:layout_width="183dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:layout_height="95dp"
+                android:weightSum="1">
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+
+                    android:layout_width="148dp"
+                    android:padding="5dp"
+                    android:layout_height="50dp"
+                    android:weightSum="1"
+                    android:layout_weight="0.49">
+
+                    <EditText
+                        android:layout_width="81dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:ems="10"
+                        android:background="@drawable/textborder"
+                        android:id="@+id/editText10"
+                        android:layout_weight="0.26" />
+
+                    <TextView
+                        android:text="分钟"
+                        android:layout_width="50dp"
+                        android:gravity="center"
+                        android:layout_height="45dp"
+                        android:id="@+id/textView4" />
+
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp">
+                <Button
+                    android:gravity="center"
+                    android:text="确定"
+                    android:textColor="#fff"
+
+                    android:layout_width="match_parent"
+                    android:background="@drawable/botton2"
+                    android:layout_height="26dp"
+                    android:layout_gravity="bottom"
+                    android:id="@+id/lquedin" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+        </FrameLayout>
+        <ImageView
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+
+            android:scaleType="fitXY"
+            android:layout_width="415dp"
+            android:layout_height="88dp"
+            app:srcCompat="@drawable/rribbon"
+            android:id="@+id/imageView5" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_height="95dp"
+        android:inputType="textPersonName"
+        android:text="埋地雷"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:ems="10"
+        android:id="@+id/editText3" />
+
+</FrameLayout>
+</LinearLayout>

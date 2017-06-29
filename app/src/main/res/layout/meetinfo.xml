@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:weightSum="1">
+
+        <TextView
+            android:text="16:00"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/MeetInfo_MeetTime"
+            />
+
+        <TextView
+            android:text=""
+            android:background="#b0b7bb"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:id="@+id/MeetInfo_SplitLine"
+            />
+
+        <TextView
+            android:text=" "
+            android:layout_width="17dp"
+            android:layout_height="match_parent"
+            android:id="@+id/MeetInfo_Blank" />
+
+        <TextView
+            android:text="相遇信息1.。。"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MeetInfo_MeetInfo" />
+    </LinearLayout>
+
+</LinearLayout>

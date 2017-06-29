@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lenovo.hoay.Main2Activity">
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+    <LinearLayout
+        android:layout_gravity="top|right"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="215dp"
+        android:background="@color/naviBarBackground"
+        android:weightSum="1">
+        <ImageButton
+            android:layout_marginTop="5dp"
+            android:id="@+id/smallLetter"
+            android:background="@drawable/note"
+            android:layout_gravity="bottom|right"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv1"
+            android:layout_gravity="bottom|center"
+            android:text="小纸条"
+            android:textColor="@color/colorblue" />
+
+
+        <ImageButton
+
+            android:id="@+id/land"
+            android:background="@drawable/landmine"
+            android:layout_gravity="bottom|right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv2"
+            android:layout_gravity="bottom|center"
+            android:text="地雷"
+            android:textColor="@color/colorblue" />
+
+        <ImageButton
+
+            android:id="@+id/photo"
+            android:background="@drawable/photoalbum"
+            android:layout_gravity="bottom|center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv3"
+            android:layout_gravity="bottom|center"
+            android:text="图鉴"
+            android:textColor="@color/colorblue" />
+    </LinearLayout>
+
+    <View  android:layout_height="1px"
+        android:layout_width="match_parent"
+        android:background="@color/navy" />
+    <include
+        layout="@layout/navibar"></include>
+
+    <ImageButton
+        android:layout_marginTop="5dp"
+        android:id="@+id/night"
+        android:background="@drawable/nighttraveling"
+        android:layout_gravity="top|left"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/mine"
+            android:background="@drawable/my1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_gravity="center|left"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/letter"
+            android:background="@drawable/env"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_gravity="center|right"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/bomb"
+            android:background="@drawable/landmine1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <ImageButton
+            android:id="@+id/mine1"
+            android:background="@drawable/my1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <include
+        layout="@layout/send"
+        android:visibility="invisible"
+        android:id="@+id/send"></include>
+    <include
+        layout="@layout/openmine"
+        android:visibility="invisible"
+        android:id="@+id/message"></include>
+
+    <include
+        layout="@layout/landmine"
+        android:visibility="invisible"
+        android:id="@+id/landmine"></include>
+
+    <include
+        layout="@layout/bong"
+        android:visibility="invisible"
+        android:id="@+id/boom"></include>
+</FrameLayout>
+

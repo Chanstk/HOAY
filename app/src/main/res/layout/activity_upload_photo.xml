@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5e5e5"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <Button
+            android:text="返回"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/UpLoad_返回" />
+
+        <TextView
+            android:text="设置个人头像            "
+            android:textColor="#000000"
+            android:textSize="23dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView"
+            android:layout_weight="1.03" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/textView3" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/nanaicon"
+        android:id="@+id/imageView"
+        android:layout_weight="0.85" />
+
+    <TextView
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:id="@+id/textView2" />
+
+    <Button
+
+        android:text="从相册选一张"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/from_photoalbum" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:id="@+id/textView4" />
+
+    <Button
+        android:text="拍一张照片"
+        android:layout_width="325dp"
+        android:textSize="20dp"
+        android:background="#ffffff"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:id="@+id/takephoto" />
+</LinearLayout>

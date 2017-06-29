@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.chanst.hoay">
+    package="com.example.lenovo.hoay">
 
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <!-- 这个权限用于进行网络定位 -->
@@ -20,48 +20,71 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
+        android:name=".MyLeanCloudApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service android:name="com.avos.avoscloud.PushService" />
+
+        <receiver android:name="com.avos.avoscloud.AVBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="65GgFxr6r4f2EjQKGp07n6dj8w0Lsvmh" />
+            android:value="VFql2gR5K9mxGs1B9LGiGCKEeKtX2qFF" />
 
-        <activity
-            android:name=".Activity.MainActivity"
-            android:launchMode="singleTask">
+        <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
+        <activity android:name=".infoActivity">
+            //注册infoActivity
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MoreInfoActivity">
+            //注册MoreInforActivity
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".liaotianActivity1">
+            //注册liaotianActivity
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".album" />
+        <activity android:name=".piece" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MyInfoActivity" />
+        <activity android:name=".EditInfoActivity" />
         <activity
-            android:name=".Activity.GalleryAcivity"
-            android:label="图鉴"
+            android:name=".LoginActivity"
             android:launchMode="singleTask"
-            android:parentActivityName=".Activity.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Activity.SmallLetterActivity"
-            android:label="小纸条"
+            android:name=".SignUpActivity"
             android:launchMode="singleTask"
-            android:parentActivityName=".Activity.MainActivity" />
-        <activity android:name=".Activity.LoginActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".Chat.talkList"
             android:launchMode="singleTask"
-            android:parentActivityName=".Activity.MainActivity"/>
-        <activity android:name=".Activity.SignUpAcitivity"
-            android:launchMode="singleTask"
-            android:parentActivityName=".Activity.LoginActivity"></activity>
+            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".Upload_PhotoActivity" />
+        <activity android:name=".Upload_iconActivity"></activity>
     </application>
 
 </manifest>

@@ -1,43 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:background="@color/naviBarBackground"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="70dp"
     android:layout_gravity="bottom">
-    <ImageButton
+
+    <LinearLayout
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@color/naviBarBackground"
-        android:id="@+id/chat"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:src="@drawable/chat"/>
-    <ImageButton
+        android:weightSum="1">
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:background="@color/naviBarBackground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/msg1"
+            android:id="@+id/msg"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv1"
+            android:layout_gravity="bottom|center"
+            android:text="消息"
+            android:textColor="@color/colorblue" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@color/naviBarBackground"
-        android:id="@+id/gallery"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:src="@drawable/gallery"/>
-    <ImageButton
+        android:weightSum="1">
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:background="@color/naviBarBackground"
+            android:id="@+id/bang"
+            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/item1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv2"
+            android:layout_gravity="bottom|center"
+            android:text="缘分榜"
+            android:textColor="@color/colorblue" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginRight="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@color/naviBarBackground"
-        android:id="@+id/map"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:src="@drawable/map"/>
-    <ImageButton
+        android:weightSum="1">
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:background="@color/naviBarBackground"
+            android:id="@+id/map"
+            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/earth1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv3"
+            android:layout_gravity="bottom|center"
+            android:text="地图"
+            android:textColor="@color/colorblue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@color/naviBarBackground"
-        android:id="@+id/loveness"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:src="@drawable/love"/>
-    <ImageButton
-        android:background="@color/naviBarBackground"
-        android:id="@+id/my"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:src="@drawable/my"/>
+        android:weightSum="1">
+        <ImageButton
+            android:layout_gravity="bottom"
+            android:background="@color/naviBarBackground"
+            android:id="@+id/my"
+            android:layout_weight="1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/head1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv4"
+            android:layout_gravity="bottom|center"
+            android:text="我"
+            android:textColor="@color/colorblue" />
+    </LinearLayout>
 </LinearLayout>

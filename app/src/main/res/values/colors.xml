@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorblue">#1296db</color>
     <color name="naviBarBackground">#e1e1e1</color>
-    <color name="colorFontBlack">#353333</color>
+    <color name="navy">#747474</color>
+    <color name="gray">#d7d7d7</color>
 </resources>

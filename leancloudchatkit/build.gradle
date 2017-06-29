@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 11
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.+'
+    compile 'com.android.support:appcompat-v7:23.+'
+    //avoscloud-sdk 为 LeanCloud基础包
+    //avoscloud-push 为推送与实时聊天需要的包
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    provided files('libs/fastjson-1.2.29.jar')
+    provided files('libs/avoscloud-push-v3.16.1.jar')
+    provided files('libs/avoscloud-sdk-v3.16.1.jar')
+    provided files('libs/okhttp-2.6.0-leancloud.jar')
+    provided 'com.squareup.picasso:picasso:2.5.2'
+}
+
+//apply from: '../maven_push.gradle'

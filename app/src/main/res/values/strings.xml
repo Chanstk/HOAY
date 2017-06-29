@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">HOAY</string>
+    <string name="app_name">Hoay</string>
+    <string name="title_activity_more_info_avtivity">MoreInfoAvtivity</string>
 </resources>

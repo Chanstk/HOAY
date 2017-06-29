@@ -1,39 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@android:style/Theme.NoTitleBar"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chanst.hoay.Activity.MainActivity">
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="5dp"
+    android:background="#E5E5E5"
+    tools:context="com.example.lenovo.hoay.MainActivity"
+    android:weightSum="1">
 
-    <com.baidu.mapapi.map.MapView
-        android:id="@+id/bmapView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:clickable="true" />
-    <LinearLayout
-        android:layout_gravity="top|right"
-        android:orientation="vertical"
+
+    <TextView
+        android:text="缘分榜"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#6B6B6B"
+        android:background="#E5E5E5"
+        android:elevation="1dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageButton
-            android:layout_marginTop="60dp"
-            android:layout_marginRight="10dp"
-            android:id="@+id/smallLetter"
-            android:background="@drawable/env"
-            android:layout_gravity="bottom|right"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/yuanfentextview"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_below="@+id/yuanfentextview"
+        android:background="#B0B7B8"
+        android:layout_marginTop="0dp"
+        android:id="@+id/yuanfenyinying"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="380dp"
+        android:layout_height="3dp"
+        android:background="#B0B7B8"
+        android:id="@+id/infoshadom1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <FrameLayout
+            android:layout_width="23dp"
+            android:layout_height="45dp">
+
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:layout_marginRight="10dp"
-            android:id="@+id/toMyLoc"
-            android:background="@drawable/arrow"
-            android:layout_gravity="bottom|right"
-            android:layout_width="wrap_content"
+            android:layout_height="45dp">
+            <Button
+
+                android:text="有缘榜"
+                android:textColor="#1e1e1e"
+                android:textSize="20dp"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/youyuanbutton" />
+            <Button
+                android:layout_width="84dp"
+                android:layout_height="45dp"
+                android:id="@+id/youyuantouming"
+                android:visibility="invisible"
+                android:background="#80e5e5e5"
+                />
+
+
+        </FrameLayout>
+        <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp">
+
+        <Button
+            android:text="孽缘榜"
+            android:textColor="#1e1e1e"
+            android:textSize="20dp"
+            android:layout_width="84dp"
             android:layout_height="wrap_content"
-            />
+            android:id="@+id/nieyuanbutton" />
+
+        <Button
+            android:layout_width="83dp"
+            android:layout_height="45dp"
+            android:id="@+id/nieyuantouming"
+            android:background="#80e5e5e5"
+            android:visibility="visible" />
+    </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp">
+
+            <Button
+                android:text="好友"
+                android:textColor="#1e1e1e"
+                android:textSize="20dp"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/haoyoubutton" />
+
+            <Button
+                android:layout_width="83dp"
+                android:layout_height="45dp"
+                android:id="@+id/haoyoutouming"
+                android:background="#80e5e5e5" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp">
+            <Button
+            android:text="我关注"
+            android:textColor="#1e1e1e"
+            android:textSize="20dp"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/guanzhubutton" />
+            <Button
+                android:layout_width="84dp"
+                android:layout_height="45dp"
+                android:id="@+id/guanzhutouming"
+                android:background="#80e5e5e5"
+                android:layout_alignTop="@+id/haoyoubutton"
+                android:layout_toRightOf="@+id/guanzhubutton"
+                android:layout_toEndOf="@+id/guanzhubutton" />
+
+        </FrameLayout>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:id="@+id/DestinyList"
+        android:layout_weight="0.99" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom">
+
+
+        <include
+            layout="@layout/navibar"></include>
     </LinearLayout>
 
-    <include
-        layout="@layout/navibar"></include>
-</FrameLayout>
+
+</LinearLayout>
